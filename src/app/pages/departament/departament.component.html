@@ -1,0 +1,40 @@
+
+  <div class="head">
+    <h1>Departament</h1>
+
+    <a (click)="back()">zurück</a>
+    </div>
+    <form [formGroup]="departamentForm" (ngSubmit)="save(departamentForm.value)">
+      <fieldset>
+        <mat-form-field>
+        <mat-label>Aufgabe-Name</mat-label>
+          <input type="text" formControlName="name" matInput required />
+        </mat-form-field>
+        <br />
+
+        <label>Datum<br />
+          <input type="datetime-local" formControlName="date"  required />
+        </label>
+        <br />
+
+        <label>Lösung<br />
+          <input type="text" formControlName="text"  required />
+        </label>
+        <br />
+
+
+          <p>Stufe</p>
+          <label>
+            <input type="radio" value="true" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required /> HIGH
+          </label>
+          <label>
+            <input type="radio" value="false" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required/> LOW
+          </label>
+
+
+      </fieldset>
+      <div class="text-right">
+        <button type="reset" color="primary" mat-raised-button>Cancel</button>
+        <button type="submit" color="primary" mat-raised-button>Save</button>
+      </div>
+    </form>

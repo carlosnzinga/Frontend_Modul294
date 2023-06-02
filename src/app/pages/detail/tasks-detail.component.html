@@ -1,0 +1,77 @@
+<div>
+
+  <h3>{{ task.name ? task.name : 'Personen' }}</h3>
+
+
+  <a (click)="back()">zurück</a>
+
+</div>
+
+  <form [formGroup]="taskForm" (ngSubmit)="save(taskForm.value)">
+
+
+   <!---- <fieldset>
+      <mat-form-field>
+        <mat-label>Aufgabe</mat-label>
+        <input type="text" formControlName="name" matInput required />
+      </mat-form-field>
+
+
+
+    </fieldset> !-->
+
+    <fieldset>
+    <label>Person<br><br />
+      <label>id</label>
+        <input type="number"  formControlName="id" required /></label>
+
+      <label>name</label>
+      <label><input type="text"  formControlName="name" required /></label>
+
+      <label>lastname</label>
+       <label> <input type="text"  formControlName="lastname" required /></label>
+
+       <label>address</label>
+        <label><input type="text"  formControlName="address" required /></label>
+
+        <label>age</label>
+        <label><input type="number"  formControlName="age" required /></label>
+
+        <label>priority</label>
+        <label><input type="number"  formControlName="priority" required /></label>
+
+        <label>multiplayer</label>
+        <label><input type="text"  formControlName="multiplayer" required /></label>
+
+        <label>text</label>
+        <label><input type="text"  formControlName="text" required /></label>
+
+        <label>members</label>
+        <label><input type="text"  formControlName="members" required /></label>
+
+      </fieldset>
+
+      <!----
+
+      <br><br />
+      <fieldset>
+      <p>Stufe</p>
+      <label>
+        <input type="radio" value="true" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required /> HIGH
+      </label>
+      <label>
+        <input type="radio" value="false" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required/> LOW
+      </label>
+    </fieldset> !-->
+
+
+
+
+
+    <div class="text-right">
+      <button type="reset">Abbrechen</button>
+      <button type="submit">Speichern</button>
+    </div>
+  </form>
+
+

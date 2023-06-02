@@ -1,0 +1,36 @@
+<div>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th role="columnheader" scope="col">PERSONEN</th>
+        <th role="columnheader" scope="col">AUFGABE</th>
+        <th role="columnheader" scope="col">STUFE</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody class="">
+      <tr class="" *ngFor="let task of tasks">
+        <td scope="row">{{ task.name }}</td>
+        <td>{{ task.text }}</td>
+        <td>
+          <span *ngIf="task.priority ">Ja</span>
+          <span *ngIf="task.priority ">Nein</span>
+        </td>
+        <td>
+          <div *ngFor="let task of tasks">{{ task.text }}</div>
+        </td>
+        <td>{{ task.priority }}</td>
+        <td class="text-right">
+          <button type="button" class="small" (click)="edit(task)">Bearbeiten</button>
+          <button type="button" class="small warning" (click)="delete(task)">Löschen</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+ <!--- <a *appIsInRoles="[roles.Admin]" [routerLink]="['/task']" >Personen erfassen</a> !-->
+
+
+</div>

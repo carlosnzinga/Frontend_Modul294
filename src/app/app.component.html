@@ -1,20 +1,38 @@
-<mat-toolbar>
+<mat-toolbar class = "header">
 
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item [routerLink]="['']">
-      <mat-icon>home</mat-icon>
+      <mat-icon style="color: cornflowerblue;">home</mat-icon>
       <span>Home</span>
     </button>
-    <button mat-menu-item [routerLink]="['games']">
-      <mat-icon>gamepad</mat-icon>
-      <span>Spiele</span>
+
+    <button mat-menu-item [routerLink]="['tasks']">
+      <mat-icon style="color: cornflowerblue;">task</mat-icon>
+      <span>Aufgabe-Liste</span>
     </button>
+
+    <button mat-menu-item [routerLink]="['person']">
+      <mat-icon style="color: cornflowerblue;">account_box</mat-icon>
+      <span>Personen erfassen</span>
+    </button>
+
+   <button mat-menu-item [routerLink]="['aufgabe']">
+      <mat-icon style="color: cornflowerblue;">assignment</mat-icon>
+      <span>Aufgabe erfassen</span>
+    </button>
+
+    <button mat-menu-item [routerLink]="['departament']">
+      <mat-icon style="color: cornflowerblue;">assignment</mat-icon>
+      <span>Department</span>
+    </button>
+
+
   </mat-menu>
 
-  <span>Game-Collection</span>
+  <span>TODO-LIST </span>
 
   <span class="toolbar__spacer"></span>
 

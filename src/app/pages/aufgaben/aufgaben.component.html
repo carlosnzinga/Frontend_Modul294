@@ -1,0 +1,39 @@
+
+<form [formGroup]="aufgabenForm" (ngSubmit)="save(aufgabenForm.value)">
+  <div class="head">
+    <h1>Task</h1>
+
+      <a (click)="back()">zurück</a>
+    </div>
+    <form [formGroup]="aufgabenForm" (ngSubmit)="save(aufgabenForm.value)">
+      <fieldset>
+        <mat-form-field>
+        <mat-label>Name</mat-label>
+          <input type="text" formControlName="name" matInput required />
+        </mat-form-field>
+        <br />
+
+        <label>Start Date<br />
+          <input type="datetime-local" formControlName="date"  required />
+        </label>
+        <br />
+
+        <label>End Date<br />
+          <input type="datetime-local" formControlName="date"  required />
+        </label>
+
+          <p>Stufe</p>
+          <label>
+            <input type="radio" value="true" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required /> HIGH
+          </label>
+          <label>
+            <input type="radio" value="false" [checked]="task.priority" formArrayName="multiplayer" name="multiplayer" required/> LOW
+          </label>
+
+
+      </fieldset>
+      <div class="text-right">
+        <button type="reset" color="primary" mat-raised-button>Cancel</button>
+        <button type="submit" color="primary" mat-raised-button>Save</button>
+      </div>
+    </form>

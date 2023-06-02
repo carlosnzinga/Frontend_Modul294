@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 import { AuthConfig, OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { AppAuthGuard } from './guard/app.auth.guard';
 import { AppAuthService } from './service/app.auth.service';
-import { IsInRolesDirective } from './directives/is-in-roles.dir';
+import { AppIsInRolesDirective } from './directives/app-is-in-roles.dir';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { NoaccessComponent } from './pages/noaccess/noaccess.component';
@@ -25,6 +25,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TasksListComponent } from './pages/list/tasks-list.component';
+import { AufgabenDetailComponent } from './pages/aufgaben/aufgaben.component';
+import { DepartamentDetailComponent } from './pages/departament/departament.component';
+import { TasksDetailComponent } from './pages/detail/tasks-detail.component';
+
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -48,11 +54,16 @@ export function storageFactory(): OAuthStorage {
 @NgModule({
   declarations: [
 
-    IsInRolesDirective,
+    TasksListComponent,
+    AppIsInRolesDirective,
     AppComponent,
     NoaccessComponent,
     LoginComponent,
-    IsInRolesDirective
+    AufgabenDetailComponent,
+    TasksListComponent,
+    TasksDetailComponent,
+    DepartamentDetailComponent
+
   ],
   imports: [
     BrowserModule,
@@ -80,6 +91,7 @@ export function storageFactory(): OAuthStorage {
       }
     }),
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

@@ -4,5 +4,5 @@ export class User {
   public lastname: string = ''
   public address: string =''
   public age!: number
-  public priority: string =''
+
 }
